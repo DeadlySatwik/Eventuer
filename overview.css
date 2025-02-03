@@ -361,3 +361,40 @@ nav ul li a {
     font-size: 14px;
     color: #333;
 }
+
+.review-card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    width: 280px;
+    min-width: 280px;
+    text-align: center;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews-background {
+    position: absolute; /* Changed from fixed */
+    opacity: 1; /* Reduced opacity for better text visibility */
+    filter: blur(15px); /* Increased blur */
+    z-index: 0; /* Changed from -1 */
+}
+
+/* Ensure content stays above background */
+.reviews-section > *:not(.reviews-background) {
+    position: relative;
+    z-index: 1;
+}
